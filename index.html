@@ -90,6 +90,87 @@
 		<figcaption>Original scene</figcaption>
 	</figure>
 
+	<!-- Grouped-windows duplicate (Step 4): define a reusable window group and use it twice -->
+	<figure id="scene-grouped-figure" class="svg-border" style="margin-top:1em;">
+		<figcaption>Grouped windows scene (Step 4)</figcaption>
+		<svg id="scene-grouped"
+			width="800" height="500"
+			viewBox="0 0 800 500"
+			role="img"
+			aria-labelledby="svgTitleGrouped svgDescGrouped"
+			tabindex="0"
+		>
+			<title id="svgTitleGrouped">Grouped-windows House and Garden Scene</title>
+			<desc id="svgDescGrouped">Duplicate of the original scene showing how to group window elements and reuse them with &lt;use&gt; for maintainability.</desc>
+
+			<!-- Scoped styles for this grouped SVG only -->
+			<style>
+				/* Scoped so other SVGs are not affected */
+				#scene-grouped #window rect { fill: #e0f7fa; stroke: #4682b4; stroke-width: 2; }
+				#scene-grouped #window line { stroke: #4682b4; stroke-width: 2; }
+			</style>
+
+			<!-- Sky -->
+			<rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
+			<!-- Grass -->
+			<rect x="0" y="300" width="800" height="200" fill="#7ec850" />
+
+			<!-- Sun (circle) -->
+			<circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+
+			<!-- Cloud (ellipse + circles) -->
+			<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" />
+			<circle cx="220" cy="95" r="20" fill="#fff" />
+			<circle cx="280" cy="95" r="18" fill="#fff" />
+
+			<!-- Tree trunk (rect) -->
+			<rect x="650" y="270" width="25" height="70" fill="#8d5524" />
+			<!-- Tree foliage (ellipse) -->
+			<ellipse cx="662" cy="260" rx="45" ry="35" fill="#3cb371" />
+
+			<!-- House body (rect) -->
+			<rect x="350" y="220" width="180" height="120" fill="#f5deb3" stroke="#b8860b" stroke-width="3" />
+			<!-- Roof (polygon) -->
+			<polygon points="340,220 440,150 550,220" fill="#b22222" stroke="#8b0000" stroke-width="3" />
+			<!-- Chimney (rect) -->
+			<rect x="480" y="160" width="22" height="40" fill="#a0522d" stroke="#7b3f00" stroke-width="2" />
+			<!-- Door (rect) -->
+			<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" stroke-width="2" />
+			<!-- Door knob (circle) -->
+			<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
+
+			<!-- Reusable window group definition: a 35x30 rect with vertical and horizontal mullions -->
+			<!-- Benefit: grouping lets us update window appearance once and reuse it in many places -->
+			<g id="window" aria-hidden="true">
+				<!-- rect is 35x30 as requested; when used we translate it to the window positions -->
+				<rect x="0" y="0" width="35" height="30" />
+				<!-- vertical mullion at half the width -->
+				<line x1="17.5" y1="0" x2="17.5" y2="30" />
+				<!-- horizontal mullion at half the height -->
+				<line x1="0" y1="15" x2="35" y2="15" />
+			</g>
+
+			<!-- Use the grouped window twice, positioned with translate to match original windows -->
+			<!-- translate(370,245): places the window group's origin at x=370,y=245 (matches original left window x/y) -->
+			<use href="#window" transform="translate(370,245)" />
+			<!-- translate(495,245): places the second window at the original right window x/y -->
+			<use href="#window" transform="translate(495,245)" />
+
+			<!-- NOTE: the group uses a 30px height (vs original 35px). This keeps the group compact while
+			     still aligning the top-left at the same coordinates; adjust translate y if you need exact
+			     pixel-matching. Grouping simplifies maintenance: change the group once to update all windows. -->
+
+			<!-- Fence (polyline) -->
+			<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#d2b48c" stroke-width="6" />
+
+			<!-- Curved garden path (path) -->
+			<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="10" />
+
+			<!-- Caption (text) -->
+			<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
+		</svg>
+	</figure>
+
 	<!-- Adjusted duplicate (Step 3): small transforms, contrast/stroke tweaks, dashed fence, footpath, mailbox, smoke -->
 	<figure id="scene-adjusted-figure" class="svg-border" style="margin-top:1em;">
 		<figcaption>Adjusted scene (Step 3)</figcaption>
