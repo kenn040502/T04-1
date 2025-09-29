@@ -1,85 +1,3 @@
-</figure>
-
-	<figure id="scene-grouped-figure">
-		<figcaption>Grouped windows scene (Step 4)</figcaption>
-		<div class="svg-border">
-			<svg
-				id="scene-grouped"
-				width="800" height="500"
-				viewBox="0 0 800 500"
-				role="img"
-				aria-labelledby="svgTitle4 svgDesc4"
-				tabindex="0"
-			>
-				<title id="svgTitle4">House and Garden Scene (Grouped Windows)</title>
-				<desc id="svgDesc4">A fourth SVG scene where the two house windows are defined as a reusable group and placed using &lt;use&gt; with transforms for maintainability.</desc>
-				<style>
-				/* Scoped styles for grouped scene only */
-				#scene-grouped .window-rect { fill: #e0f7fa; stroke: #4682b4; stroke-width: 2; }
-				#scene-grouped .window-mullion { stroke: #4682b4; stroke-width: 2; }
-				</style>
-				<!-- Sky -->
-				<rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
-				<!-- Grass -->
-				<rect x="0" y="300" width="800" height="200" fill="#7ec850" />
-
-				<!-- Sun (circle) -->
-				<circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
-
-				<!-- Cloud (ellipse + circles) -->
-				<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" />
-				<circle cx="220" cy="95" r="20" fill="#fff" />
-				<circle cx="280" cy="95" r="18" fill="#fff" />
-
-				<!-- Tree trunk (rect) -->
-				<rect x="650" y="270" width="25" height="70" fill="#8d5524" />
-				<!-- Tree foliage (ellipse) -->
-				<ellipse cx="662" cy="260" rx="45" ry="35" fill="#3cb371" />
-
-				<!-- House body (rect) -->
-				<rect x="350" y="220" width="180" height="120" fill="#f5deb3" stroke="#b8860b" stroke-width="3" />
-				<!-- Roof (polygon) -->
-				<polygon points="340,220 440,150 550,220" fill="#b22222" stroke="#8b0000" stroke-width="3" />
-				<!-- Chimney (rect) -->
-				<rect x="480" y="160" width="22" height="40" fill="#a0522d" stroke="#7b3f00" stroke-width="2" />
-				<!-- Door (rect) -->
-				<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" stroke-width="2" />
-				<!-- Door knob (circle) -->
-				<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
-
-				<!-- Window group definition: reusable window with mullions -->
-				<g id="window">
-					<rect class="window-rect" x="0" y="0" width="35" height="30" />
-					<line class="window-mullion" x1="17.5" y1="0" x2="17.5" y2="30" />
-					<line class="window-mullion" x1="0" y1="15" x2="35" y2="15" />
-				</g>
-
-				<!-- Use window group for left window -->
-				<!-- translate(370,245): matches original left window position -->
-				<use href="#window" transform="translate(370,245)" />
-				<!-- Use window group for right window -->
-				<!-- translate(495,245): matches original right window position -->
-				<use href="#window" transform="translate(495,245)" />
-				<!-- Grouping windows as a <g> makes updates and styling easier and avoids code duplication. -->
-
-				<!-- Window mullion overlays for original window height (35x35 in original, but 35x30 here for clarity) -->
-
-				<!-- Left window vertical mullion (original: x1=387.5, y1=245, x2=387.5, y2=280) -->
-				<!-- Left window horizontal mullion (original: x1=370, y1=262.5, x2=405, y2=262.5) -->
-				<!-- Right window vertical mullion (original: x1=512.5, y1=245, x2=512.5, y2=280) -->
-				<!-- Right window horizontal mullion (original: x1=495, y1=262.5, x2=530, y2=262.5) -->
-
-				<!-- Fence (polyline) -->
-				<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#d2b48c" stroke-width="6" />
-
-				<!-- Curved garden path (path) -->
-				<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="10" />
-
-				<!-- Caption (text) -->
-				<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
-			</svg>
-		</div>
-	</figure>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -113,292 +31,151 @@
 </head>
 <body>
 	<h1>T04 – SVG House &amp; Garden</h1>
-	<figure id="scene-original">
+	<figure id="scene-original" class="svg-border">
+		<svg
+			width="800" height="500"
+			viewBox="0 0 800 500"
+			role="img"
+			aria-labelledby="svgTitle svgDesc"
+			tabindex="0"
+		>
+			<title id="svgTitle">House and Garden Scene</title>
+			<desc id="svgDesc">A colorful SVG illustration of a house with a garden, showing sky, grass, sun, cloud, tree, fence, and a curved path, using all basic SVG shapes for demonstration and accessibility.</desc>
+			<!-- Sky -->
+			<rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
+			<!-- Grass -->
+			<rect x="0" y="300" width="800" height="200" fill="#7ec850" />
+
+			<!-- Sun (circle) -->
+			<circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+
+			<!-- Cloud (ellipse + circles) -->
+			<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" />
+			<circle cx="220" cy="95" r="20" fill="#fff" />
+			<circle cx="280" cy="95" r="18" fill="#fff" />
+
+			<!-- Tree trunk (rect) -->
+			<rect x="650" y="270" width="25" height="70" fill="#8d5524" />
+			<!-- Tree foliage (ellipse) -->
+			<ellipse cx="662" cy="260" rx="45" ry="35" fill="#3cb371" />
+
+			<!-- House body (rect) -->
+			<rect x="350" y="220" width="180" height="120" fill="#f5deb3" stroke="#b8860b" stroke-width="3" />
+			<!-- Roof (polygon) -->
+			<polygon points="340,220 440,150 550,220" fill="#b22222" stroke="#8b0000" stroke-width="3" />
+			<!-- Chimney (rect) -->
+			<rect x="480" y="160" width="22" height="40" fill="#a0522d" stroke="#7b3f00" stroke-width="2" />
+			<!-- Door (rect) -->
+			<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" stroke-width="2" />
+			<!-- Door knob (circle) -->
+			<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
+			<!-- Left window (rect) -->
+			<rect x="370" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
+			<line x1="387.5" y1="245" x2="387.5" y2="280" stroke="#4682b4" stroke-width="2" />
+			<line x1="370" y1="262.5" x2="405" y2="262.5" stroke="#4682b4" stroke-width="2" />
+			<!-- Right window (rect) -->
+			<rect x="495" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
+			<line x1="512.5" y1="245" x2="512.5" y2="280" stroke="#4682b4" stroke-width="2" />
+			<line x1="495" y1="262.5" x2="530" y2="262.5" stroke="#4682b4" stroke-width="2" />
+
+			<!-- Fence (polyline) -->
+			<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#d2b48c" stroke-width="6" />
+
+			<!-- Curved garden path (path) -->
+			<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="10" />
+
+			<!-- Caption (text) -->
+			<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
+		</svg>
 		<figcaption>Original scene</figcaption>
-		<div class="svg-border">
-			<svg
-				width="800" height="500"
-				viewBox="0 0 800 500"
-				role="img"
-				aria-labelledby="svgTitle svgDesc"
-				tabindex="0"
-			>
-				<title id="svgTitle">House and Garden Scene</title>
-				<desc id="svgDesc">A colorful SVG illustration of a house with a garden, showing sky, grass, sun, cloud, tree, fence, and a curved path, using all basic SVG shapes for demonstration and accessibility.</desc>
-				<!-- Sky -->
-				<rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
-				<!-- Grass -->
-				<rect x="0" y="300" width="800" height="200" fill="#7ec850" />
-
-				<!-- Sun (circle) -->
-				<circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
-
-				<!-- Cloud (ellipse + circles) -->
-				<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" />
-				<circle cx="220" cy="95" r="20" fill="#fff" />
-				<circle cx="280" cy="95" r="18" fill="#fff" />
-
-				<!-- Tree trunk (rect) -->
-				<rect x="650" y="270" width="25" height="70" fill="#8d5524" />
-				<!-- Tree foliage (ellipse) -->
-				<ellipse cx="662" cy="260" rx="45" ry="35" fill="#3cb371" />
-
-				<!-- House body (rect) -->
-				<rect x="350" y="220" width="180" height="120" fill="#f5deb3" stroke="#b8860b" stroke-width="3" />
-				<!-- Roof (polygon) -->
-				<polygon points="340,220 440,150 550,220" fill="#b22222" stroke="#8b0000" stroke-width="3" />
-				<!-- Chimney (rect) -->
-				<rect x="480" y="160" width="22" height="40" fill="#a0522d" stroke="#7b3f00" stroke-width="2" />
-				<!-- Door (rect) -->
-				<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" stroke-width="2" />
-				<!-- Door knob (circle) -->
-				<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
-				<!-- Left window (rect) -->
-				<rect x="370" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
-				<line x1="387.5" y1="245" x2="387.5" y2="280" stroke="#4682b4" stroke-width="2" />
-				<line x1="370" y1="262.5" x2="405" y2="262.5" stroke="#4682b4" stroke-width="2" />
-				<!-- Right window (rect) -->
-				<rect x="495" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
-				<line x1="512.5" y1="245" x2="512.5" y2="280" stroke="#4682b4" stroke-width="2" />
-				<line x1="495" y1="262.5" x2="530" y2="262.5" stroke="#4682b4" stroke-width="2" />
-
-				<!-- Fence (polyline) -->
-				<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#d2b48c" stroke-width="6" />
-
-				<!-- Curved garden path (path) -->
-				<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="10" />
-
-				<!-- Caption (text) -->
-				<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
-			</svg>
-		</div>
 	</figure>
 
-		<figure id="scene-adjusted-figure">
-			<figcaption>Adjusted scene (Step 3)</figcaption>
-			<div class="svg-border">
-				<svg
-					id="scene-adjusted"
-					width="800" height="500"
-					viewBox="0 0 800 500"
-					role="img"
-					aria-labelledby="svgTitle3 svgDesc3"
-					tabindex="0"
-				>
-					<title id="svgTitle3">House and Garden Scene (Adjusted)</title>
-					<desc id="svgDesc3">A third SVG scene with house and tree repositioned, improved color contrast, dashed fence, a curved stone footpath, mailbox, and chimney smoke, with styles scoped to this SVG only.</desc>
-					<style>
-					/* Scoped styles for adjusted scene only */
-					#scene-adjusted .strong-stroke { stroke-width: 5; }
-					#scene-adjusted .medium-stroke { stroke-width: 3; }
-					#scene-adjusted .thin-stroke { stroke-width: 1.5; }
-					#scene-adjusted .fence-dash { stroke-dasharray: 12 8; }
-					#scene-adjusted .stone { fill: #e0e0e0; stroke: #b0b0b0; stroke-width: 1; }
-					#scene-adjusted .mailbox-body { fill: #e74c3c; stroke: #b22222; stroke-width: 2; }
-					#scene-adjusted .mailbox-flag { fill: #f1c40f; stroke: #b8860b; stroke-width: 1; }
-					#scene-adjusted .smoke { fill: #f5f5f5; opacity: 0.7; }
-					</style>
-					<!-- Sky -->
-					<rect x="0" y="0" width="800" height="300" fill="#a3d0ff" /> <!-- slightly deeper blue for contrast -->
-					<!-- Grass -->
-					<rect x="0" y="300" width="800" height="200" fill="#6ebf4b" /> <!-- slightly deeper green for contrast -->
-
-					<!-- Sun (circle) -->
-					<circle cx="100" cy="100" r="50" fill="#ffd700" stroke="#e6b800" class="strong-stroke" /> <!-- bolder sun -->
-
-					<!-- Cloud (ellipse + circles) -->
-					<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" class="thin-stroke" stroke="#bbb" />
-					<circle cx="220" cy="95" r="20" fill="#fff" class="thin-stroke" stroke="#bbb" />
-					<circle cx="280" cy="95" r="18" fill="#fff" class="thin-stroke" stroke="#bbb" />
-
-					<!-- Tree (repositioned slightly left) -->
-					<g transform="translate(-30,0)">
-						<rect x="650" y="270" width="25" height="70" fill="#7a4a1e" /> <!-- darker trunk -->
-						<ellipse cx="662" cy="260" rx="45" ry="35" fill="#2e8b57" stroke="#206040" class="medium-stroke" /> <!-- deeper green -->
-					</g>
-
-					<!-- House (repositioned slightly right and up) -->
-					<g transform="translate(20,-10)">
-						<!-- House body -->
-						<rect x="350" y="220" width="180" height="120" fill="#ffe4b5" stroke="#a0522d" class="medium-stroke" />
-						<!-- Roof -->
-						<polygon points="340,220 440,150 550,220" fill="#a52a2a" stroke="#6e1a1a" class="medium-stroke" />
-						<!-- Chimney -->
-						<rect x="480" y="160" width="22" height="40" fill="#8b5c2b" stroke="#5a3a1a" class="thin-stroke" />
-						<!-- Door -->
-						<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" class="thin-stroke" />
-						<!-- Door knob -->
-						<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
-						<!-- Left window -->
-						<rect x="370" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" class="thin-stroke" />
-						<line x1="387.5" y1="245" x2="387.5" y2="280" stroke="#4682b4" class="thin-stroke" />
-						<line x1="370" y1="262.5" x2="405" y2="262.5" stroke="#4682b4" class="thin-stroke" />
-						<!-- Right window -->
-						<rect x="495" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" class="thin-stroke" />
-						<line x1="512.5" y1="245" x2="512.5" y2="280" stroke="#4682b4" class="thin-stroke" />
-						<line x1="495" y1="262.5" x2="530" y2="262.5" stroke="#4682b4" class="thin-stroke" />
-					</g>
-
-					<!-- Fence (dashed, improved contrast) -->
-					<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#a0522d" class="medium-stroke fence-dash" />
-
-					<!-- Curved garden path (original, faded) -->
-					<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="8" opacity="0.5" />
-
-					<!-- Curved stone footpath to door (new, with stones) -->
-					<!-- Path -->
-					<path d="M 510 350 Q 470 400 440 420 Q 430 430 440 440 Q 460 460 480 420 Q 500 380 440 420" fill="none" stroke="#888" stroke-width="10" />
-					<!-- Stones (ellipses along the path) -->
-					<ellipse class="stone" cx="500" cy="370" rx="10" ry="6" />
-					<ellipse class="stone" cx="480" cy="400" rx="8" ry="5" />
-					<ellipse class="stone" cx="460" cy="420" rx="7" ry="4" />
-					<ellipse class="stone" cx="445" cy="435" rx="6" ry="3.5" />
-
-					<!-- Mailbox near path (new) -->
-					<g>
-						<!-- Post -->
-						<rect x="520" y="410" width="6" height="30" fill="#8d5524" />
-						<!-- Box -->
-						<rect x="510" y="395" width="26" height="18" rx="4" class="mailbox-body" />
-						<!-- Curved top -->
-						<path d="M 510 395 Q 523 385 536 395" class="mailbox-body" fill="none" />
-						<!-- Flag -->
-						<polygon points="535,395 545,390 545,400" class="mailbox-flag" />
-					</g>
-
-					<!-- Chimney smoke (new, subtle ellipses) -->
-					<g>
-						<ellipse class="smoke" cx="510" cy="150" rx="10" ry="6" />
-						<ellipse class="smoke" cx="520" cy="140" rx="8" ry="5" />
-						<ellipse class="smoke" cx="530" cy="130" rx="6" ry="4" />
-					</g>
-
-					<!-- Caption (text) -->
-					<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
-				</svg>
-			</div>
-		</figure>
-
-	<figure id="scene-annotated-figure">
+	<!-- Annotated duplicate -->
+	<figure id="scene-annotated-figure" class="svg-border" style="margin-top:1em;">
 		<figcaption>Annotated scene (Step 2)</figcaption>
-		<div class="svg-border">
-			<svg
-				id="scene-annotated"
-				width="800" height="500"
-				viewBox="0 0 800 500"
-				role="img"
-				aria-labelledby="svgTitle2 svgDesc2"
-				tabindex="0"
-			>
-				<title id="svgTitle2">House and Garden Scene (Annotated)</title>
-				<desc id="svgDesc2">A duplicate SVG scene with annotation labels for each SVG shape type, showing their key attributes and example values.</desc>
-				<!-- Sky -->
-				<rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
-				<!-- Grass -->
-				<rect x="0" y="300" width="800" height="200" fill="#7ec850" />
+		<svg id="scene-annotated"
+			width="800" height="500"
+			viewBox="0 0 800 500"
+			role="img"
+			aria-labelledby="svgTitleAnnotated svgDescAnnotated"
+			tabindex="0"
+		>
+			<title id="svgTitleAnnotated">Annotated House and Garden Scene</title>
+			<desc id="svgDescAnnotated">Duplicate of the original scene with annotation labels for example attributes of each SVG shape type.</desc>
+			<!-- Sky -->
+			<rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
+			<!-- Grass -->
+			<rect x="0" y="300" width="800" height="200" fill="#7ec850" />
 
-				<!-- Sun (circle) -->
-				<circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+			<!-- Sun (circle) -->
+			<circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
 
-				<!-- Cloud (ellipse + circles) -->
-				<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" />
-				<circle cx="220" cy="95" r="20" fill="#fff" />
-				<circle cx="280" cy="95" r="18" fill="#fff" />
+			<!-- Cloud (ellipse + circles) -->
+			<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" />
+			<circle cx="220" cy="95" r="20" fill="#fff" />
+			<circle cx="280" cy="95" r="18" fill="#fff" />
 
-				<!-- Tree trunk (rect) -->
-				<rect x="650" y="270" width="25" height="70" fill="#8d5524" />
-				<!-- Tree foliage (ellipse) -->
-				<ellipse cx="662" cy="260" rx="45" ry="35" fill="#3cb371" />
+			<!-- Tree trunk (rect) -->
+			<rect x="650" y="270" width="25" height="70" fill="#8d5524" />
+			<!-- Tree foliage (ellipse) -->
+			<ellipse cx="662" cy="260" rx="45" ry="35" fill="#3cb371" />
 
-				<!-- House body (rect) -->
-				<rect x="350" y="220" width="180" height="120" fill="#f5deb3" stroke="#b8860b" stroke-width="3" />
-				<!-- Roof (polygon) -->
-				<polygon points="340,220 440,150 550,220" fill="#b22222" stroke="#8b0000" stroke-width="3" />
-				<!-- Chimney (rect) -->
-				<rect x="480" y="160" width="22" height="40" fill="#a0522d" stroke="#7b3f00" stroke-width="2" />
-				<!-- Door (rect) -->
-				<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" stroke-width="2" />
-				<!-- Door knob (circle) -->
-				<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
-				<!-- Left window (rect) -->
-				<rect x="370" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
-				<line x1="387.5" y1="245" x2="387.5" y2="280" stroke="#4682b4" stroke-width="2" />
-				<line x1="370" y1="262.5" x2="405" y2="262.5" stroke="#4682b4" stroke-width="2" />
-				<!-- Right window (rect) -->
-				<rect x="495" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
-				<line x1="512.5" y1="245" x2="512.5" y2="280" stroke="#4682b4" stroke-width="2" />
-				<line x1="495" y1="262.5" x2="530" y2="262.5" stroke="#4682b4" stroke-width="2" />
+			<!-- House body (rect) -->
+			<rect x="350" y="220" width="180" height="120" fill="#f5deb3" stroke="#b8860b" stroke-width="3" />
+			<!-- Roof (polygon) -->
+			<polygon points="340,220 440,150 550,220" fill="#b22222" stroke="#8b0000" stroke-width="3" />
+			<!-- Chimney (rect) -->
+			<rect x="480" y="160" width="22" height="40" fill="#a0522d" stroke="#7b3f00" stroke-width="2" />
+			<!-- Door (rect) -->
+			<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" stroke-width="2" />
+			<!-- Door knob (circle) -->
+			<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
+			<!-- Left window (rect) -->
+			<rect x="370" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
+			<line x1="387.5" y1="245" x2="387.5" y2="280" stroke="#4682b4" stroke-width="2" />
+			<line x1="370" y1="262.5" x2="405" y2="262.5" stroke="#4682b4" stroke-width="2" />
+			<!-- Right window (rect) -->
+			<rect x="495" y="245" width="35" height="35" fill="#e0f7fa" stroke="#4682b4" stroke-width="2" />
+			<line x1="512.5" y1="245" x2="512.5" y2="280" stroke="#4682b4" stroke-width="2" />
+			<line x1="495" y1="262.5" x2="530" y2="262.5" stroke="#4682b4" stroke-width="2" />
 
-				<!-- Fence (polyline) -->
-				<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#d2b48c" stroke-width="6" />
+			<!-- Fence (polyline) -->
+			<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#d2b48c" stroke-width="6" />
 
-				<!-- Curved garden path (path) -->
-				<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="10" />
+			<!-- Curved garden path (path) -->
+			<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="10" />
 
-				<!-- Caption (text) -->
-				<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
+			<!-- Caption (text) -->
+			<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
 
-				<style>
-				#scene-annotated #annotations {
-					font-size: 12px;
-					fill: #333;
-					stroke: #999;
-					stroke-width: 1;
-					pointer-events: none;
-				}
-				#scene-annotated #annotations text {
-					fill: #333;
-					stroke: none;
-					font-family: Arial, sans-serif;
-					paint-order: stroke fill;
-					pointer-events: none;
-				}
-				#scene-annotated #annotations line {
-					stroke: #999;
-					stroke-width: 1;
-					pointer-events: none;
-				}
-				#scene-annotated #annotations rect {
-					fill: #fffbe6;
-					stroke: #999;
-					stroke-width: 0.5;
-				}
-				</style>
-				<g id="annotations">
-					<!-- Circle annotation (Sun) -->
-					<line x1="150" y1="80" x2="180" y2="60" />
-					<text x="185" y="55">circle (cx=100, cy=100, r=50)</text>
-
-					<!-- Rect annotation (House body) -->
-					<line x1="530" y1="220" x2="600" y2="180" />
-					<text x="605" y="175">rect (x=350, y=220, width=180, height=120)</text>
-
-					<!-- Ellipse annotation (Tree foliage) -->
-					<line x1="707" y1="245" x2="765" y2="220" />
-					<text x="770" y="215">ellipse (cx=662, cy=260, rx=45, ry=35)</text>
-
-					<!-- Line annotation (Left window vertical) -->
-					<line x1="387.5" y1="245" x2="370" y2="210" />
-					<text x="355" y="205">line (x1=387.5, y1=245) → (x2=387.5, y2=280)</text>
-
-					<!-- Polyline annotation (Fence) -->
-					<line x1="250" y1="320" x2="180" y2="300" />
-					<text x="110" y="295">polyline (points=200,340 210,320 220,340...)</text>
-
-					<!-- Polygon annotation (Roof) -->
-					<line x1="440" y1="150" x2="500" y2="100" />
-					<text x="505" y="95">polygon (points=340,220 440,150 550,220)</text>
-
-					<!-- Path annotation (Garden path) -->
-					<line x1="600" y1="500" x2="700" y2="490" />
-					<text x="705" y="490">path (M 440 340 Q...)</text>
-
-					<!-- Text annotation (Caption) -->
-					<line x1="400" y1="480" x2="400" y2="510" />
-					<text x="370" y="525">text (x=400, y=480)</text>
-				</g>
-			</svg>
-		</div>
+			<!-- Annotations group: labels and callouts for one example of each shape -->
+			<g id="annotations">
+				<!-- circle: sun -->
+				<line x1="150" y1="100" x2="160" y2="90" />
+				<text x="165" y="90">circle: cx=100, cy=100, r=50</text>
+				<!-- rect: house body -->
+				<line x1="440" y1="220" x2="440" y2="200" />
+				<text x="445" y="195">rect: x=350, y=220, w=180, h=120</text>
+				<!-- ellipse: cloud -->
+				<line x1="250" y1="65" x2="250" y2="60" />
+				<text x="255" y="57">ellipse: cx=250, cy=90, rx=40, ry=25</text>
+				<!-- line: window divider -->
+				<line x1="387.5" y1="262.5" x2="395" y2="260" />
+				<text x="400" y="260">line: x1=387.5, y1=245 → x2=387.5, y2=280</text>
+				<!-- polyline: fence (first points) -->
+				<line x1="220" y1="340" x2="235" y2="330" />
+				<text x="240" y="328">polyline: points="200,340 210,320 220,340"</text>
+				<!-- polygon: roof points -->
+				<line x1="440" y1="150" x2="440" y2="140" />
+				<text x="445" y="137">polygon: 340,220 440,150 550,220</text>
+				<!-- path: start and first control -->
+				<line x1="440" y1="340" x2="460" y2="350" />
+				<text x="465" y="350">path: M 440 340 Q 420 400 ...</text>
+				<!-- text: caption position -->
+				<line x1="400" y1="480" x2="400" y2="495" />
+				<text x="405" y="498">text: x=400, y=480</text>
+			</g>
+		</svg>
 	</figure>
 </body>
 </html>
