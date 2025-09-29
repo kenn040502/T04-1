@@ -1,3 +1,85 @@
+</figure>
+
+	<figure id="scene-grouped-figure">
+		<figcaption>Grouped windows scene (Step 4)</figcaption>
+		<div class="svg-border">
+			<svg
+				id="scene-grouped"
+				width="800" height="500"
+				viewBox="0 0 800 500"
+				role="img"
+				aria-labelledby="svgTitle4 svgDesc4"
+				tabindex="0"
+			>
+				<title id="svgTitle4">House and Garden Scene (Grouped Windows)</title>
+				<desc id="svgDesc4">A fourth SVG scene where the two house windows are defined as a reusable group and placed using &lt;use&gt; with transforms for maintainability.</desc>
+				<style>
+				/* Scoped styles for grouped scene only */
+				#scene-grouped .window-rect { fill: #e0f7fa; stroke: #4682b4; stroke-width: 2; }
+				#scene-grouped .window-mullion { stroke: #4682b4; stroke-width: 2; }
+				</style>
+				<!-- Sky -->
+				<rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
+				<!-- Grass -->
+				<rect x="0" y="300" width="800" height="200" fill="#7ec850" />
+
+				<!-- Sun (circle) -->
+				<circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+
+				<!-- Cloud (ellipse + circles) -->
+				<ellipse cx="250" cy="90" rx="40" ry="25" fill="#fff" />
+				<circle cx="220" cy="95" r="20" fill="#fff" />
+				<circle cx="280" cy="95" r="18" fill="#fff" />
+
+				<!-- Tree trunk (rect) -->
+				<rect x="650" y="270" width="25" height="70" fill="#8d5524" />
+				<!-- Tree foliage (ellipse) -->
+				<ellipse cx="662" cy="260" rx="45" ry="35" fill="#3cb371" />
+
+				<!-- House body (rect) -->
+				<rect x="350" y="220" width="180" height="120" fill="#f5deb3" stroke="#b8860b" stroke-width="3" />
+				<!-- Roof (polygon) -->
+				<polygon points="340,220 440,150 550,220" fill="#b22222" stroke="#8b0000" stroke-width="3" />
+				<!-- Chimney (rect) -->
+				<rect x="480" y="160" width="22" height="40" fill="#a0522d" stroke="#7b3f00" stroke-width="2" />
+				<!-- Door (rect) -->
+				<rect x="420" y="280" width="40" height="60" fill="#deb887" stroke="#8b5c2b" stroke-width="2" />
+				<!-- Door knob (circle) -->
+				<circle cx="455" cy="310" r="4" fill="#8b5c2b" />
+
+				<!-- Window group definition: reusable window with mullions -->
+				<g id="window">
+					<rect class="window-rect" x="0" y="0" width="35" height="30" />
+					<line class="window-mullion" x1="17.5" y1="0" x2="17.5" y2="30" />
+					<line class="window-mullion" x1="0" y1="15" x2="35" y2="15" />
+				</g>
+
+				<!-- Use window group for left window -->
+				<!-- translate(370,245): matches original left window position -->
+				<use href="#window" transform="translate(370,245)" />
+				<!-- Use window group for right window -->
+				<!-- translate(495,245): matches original right window position -->
+				<use href="#window" transform="translate(495,245)" />
+				<!-- Grouping windows as a <g> makes updates and styling easier and avoids code duplication. -->
+
+				<!-- Window mullion overlays for original window height (35x35 in original, but 35x30 here for clarity) -->
+
+				<!-- Left window vertical mullion (original: x1=387.5, y1=245, x2=387.5, y2=280) -->
+				<!-- Left window horizontal mullion (original: x1=370, y1=262.5, x2=405, y2=262.5) -->
+				<!-- Right window vertical mullion (original: x1=512.5, y1=245, x2=512.5, y2=280) -->
+				<!-- Right window horizontal mullion (original: x1=495, y1=262.5, x2=530, y2=262.5) -->
+
+				<!-- Fence (polyline) -->
+				<polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340 310,320 320,340 330,320 340,340" fill="none" stroke="#d2b48c" stroke-width="6" />
+
+				<!-- Curved garden path (path) -->
+				<path d="M 440 340 Q 420 400 500 480 Q 600 500 650 400" fill="none" stroke="#bdb76b" stroke-width="10" />
+
+				<!-- Caption (text) -->
+				<text x="400" y="480" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
+			</svg>
+		</div>
+	</figure>
 
 <!DOCTYPE html>
 <html lang="en">
