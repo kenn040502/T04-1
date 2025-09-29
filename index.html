@@ -87,6 +87,85 @@
       </svg>
     </div>
   </figure>
+</figure>
+
+  <figure id="scene-grouped-figure">
+    <figcaption>Grouped windows scene (Step 4)</figcaption>
+    <style>
+      #scene-grouped #window rect {
+        fill: #b3e0ff;
+        stroke: #7a1818;
+        stroke-width: 2;
+      }
+      #scene-grouped #window line {
+        stroke: #7a1818;
+        stroke-width: 2;
+      }
+    </style>
+    <div class="svg-border">
+      <svg
+        id="scene-grouped"
+        viewBox="0 0 800 500"
+        width="800" height="500"
+        role="img"
+        aria-labelledby="svgTitle4 svgDesc4"
+        tabindex="0"
+      >
+        <title id="svgTitle4">House and Garden Scene (Grouped Windows)</title>
+        <desc id="svgDesc4">A duplicate SVG illustration of a house and garden, with the two windows refactored into a reusable group and placed using &lt;use&gt; and transform.</desc>
+        <!-- Sky (rect) -->
+        <rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
+        <!-- Grass (rect) -->
+        <rect x="0" y="300" width="800" height="200" fill="#7ed957" />
+        <!-- Sun (circle) -->
+        <circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+        <!-- Cloud (ellipse) -->
+        <ellipse cx="250" cy="90" rx="50" ry="25" fill="#fff" opacity="0.9" />
+        <ellipse cx="290" cy="100" rx="35" ry="20" fill="#fff" opacity="0.85" />
+        <ellipse cx="230" cy="110" rx="30" ry="18" fill="#fff" opacity="0.8" />
+        <!-- Tree trunk (rect) -->
+        <rect x="650" y="260" width="20" height="70" fill="#8d5524" />
+        <!-- Tree foliage (circle) -->
+        <circle cx="660" cy="240" r="40" fill="#3cb371" />
+        <!-- House body (rect) -->
+        <rect x="350" y="220" width="160" height="120" fill="#ffe5b4" stroke="#b97a56" stroke-width="3" />
+        <!-- Roof (polygon) -->
+        <polygon points="330,220 430,150 530,220" fill="#b22222" stroke="#7a1818" stroke-width="3" />
+        <!-- Chimney (rect) -->
+        <rect x="480" y="160" width="20" height="40" fill="#b97a56" stroke="#7a1818" stroke-width="2" />
+        <!-- Door (rect) -->
+        <rect x="415" y="280" width="30" height="60" fill="#a0522d" stroke="#7a1818" stroke-width="2" />
+        <!-- Door knob (circle) -->
+        <circle cx="440" cy="310" r="4" fill="#ffd700" />
+        <!-- Grouped window definition: 35x30 rect with mullion lines -->
+        <!-- Grouping windows as a <g> allows easy reuse and consistent styling -->
+        <g id="window">
+          <rect x="0" y="0" width="30" height="30" />
+          <!-- Vertical mullion -->
+          <line x1="15" y1="0" x2="15" y2="30" />
+          <!-- Horizontal mullion -->
+          <line x1="0" y1="15" x2="30" y2="15" />
+        </g>
+        <!-- Use the window group for left window -->
+        <!-- translate(370,240): matches original left window position -->
+        <use href="#window" transform="translate(370,240)" />
+        <!-- Use the window group for right window -->
+        <!-- translate(480,240): matches original right window position -->
+        <use href="#window" transform="translate(480,240)" />
+        <!-- Window grouping makes it easy to update all windows at once and keeps code DRY -->
+        <!-- Window panes (lines) are now part of the group -->
+        <!-- Fence (polyline) -->
+        <polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340" fill="none" stroke="#deb887" stroke-width="6" />
+        <!-- Fence rails (line) -->
+        <line x1="200" y1="330" x2="300" y2="330" stroke="#deb887" stroke-width="4" />
+        <line x1="200" y1="335" x2="300" y2="335" stroke="#deb887" stroke-width="4" />
+        <!-- Curved garden path (path) -->
+        <path d="M 430 340 Q 420 400 500 480 Q 570 420 600 500" fill="none" stroke="#bdb76b" stroke-width="10" />
+        <!-- Caption (text) -->
+        <text x="400" y="490" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the SVG House &amp; Garden!</text>
+      </svg>
+    </div>
+  </figure>
 
   <figure id="scene-annotated-figure">
     <figcaption>Annotated scene (Step 2)</figcaption>
